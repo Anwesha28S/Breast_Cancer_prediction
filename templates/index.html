@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast_Cancer_Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #FDE7EF;
+            padding: 20px;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            background: #8B3A62;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: 
+            #B4557A;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div style="background:#f9f9f9; padding:15px; border-radius:8px; margin-bottom:20px; border:1px solid #ddd;">
+        <h3>Wiscinson Breast Cancer Prediction dataset </h3>
+        <p><strong>Data Set Information:</strong></p>
+        <ul>
+            <li>The dataset includes 569 instances:</li>
+            <p>The Wisconsin Breast Cancer (Diagnostic) dataset contains measurements derived from fine needle aspirate (FNA) images of breast masses.
+                <br> 
+            It consists of 569 samples with 30 numerical features describing characteristics of cell nuclei, and a binary target indicating whether the tumor is benign or malignant. </p>
+    </div>
+
+    <div style="background:#f9f9f9; padding:15px; border-radius:8px; margin-bottom:20px;">
+        <h3>Attribute Information</h3>
+        <ul>
+            <li><strong>Mean Concave Points</strong> 
+                <ul>Represents the average number of concave portions (inward curves) of the cell nucleus boundary.</ul>
+                <ul>Higher values indicate more irregular and indented cell shapes.</ul>
+                <ul>Often associated with malignant tumors</ul>
+            <li><strong>Worst Concave Points:</strong> 
+                <ul>Highlights the most irregular region of the nucleus.</ul>
+            </li>
+            <li><strong>Worst Radius:</strong>
+                <ul>The maximum distance from the center to the boundary of the nucleus.</ul>
+                <ul>Malignant tumors generally have larger and more variable nuclei.</ul>
+            </li>
+            <li><strong>Worst Area:</strong>
+                <ul>Represents the largest area of the cell nucleus measured.</ul>
+                <ul>Correlates with nucleus size and abnormal cell growth.</ul>
+            </li>
+            <li><strong>Worst Perimeter:</strong>
+                <ul>Maximum perimeter length,indicates the extent and irregularity of the cell shape.</ul>
+            </li>
+            
+        </ul>
+    </div>
+    <h2>Breast Cancer Detection(Predicting Tumors as Malignant or Benign)</h2>
+    
+    
+
+    <div class="container">
+    <h2>Breast Cancer Detection</h2>
+
+    <form action="/predictdata" method="post">
+        
+        <label>Mean Concave points</label>
+        <input type="number" step="0.01" name="concave points_mean" required>
+
+        <label>Worst Concave points</label>
+        <input type="number" step="0.01" name="concave points_worst" required>
+
+        <label>Worst Radius</label>
+        <input type="number" step="0.01" name="radius_worst" required>
+
+        <label>Worst Area</label>
+        <input type="number" step="0.01" name="area_worst" required>
+
+        <label>Worst Perimeter</label>
+        <input type="number" step="0.01" name="perimeter_worst" required>
+
+        <button type="submit">Predict if Benign or Malignant</button>
+        {% if prediction %}
+    <h3 style="text-align:center; margin-top:20px;">
+        Prediction: <span style="color:crimson;">{{ prediction }}</span><br>
+        
+    </h3>
+{% endif %}
+    </form>
+    
+</div>
+</div>
+</body>
+</html>
