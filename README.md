@@ -1,11 +1,20 @@
-**Overview**
-This is a Flask-based web application for predicting whether a breast tumor is benign or malignant using the Wisconsin Breast Cancer (Diagnostic) dataset.
 
-**Dataset Description**
+# Breast Cancer Prediction Web App
 
-The Wisconsin Breast Cancer (Diagnostic) dataset contains 569 samples with 30 numerical features derived from fine needle aspirate (FNA) images of breast masses.
+## Overview
 
-Each sample includes measurements describing cell nuclei characteristics, such as radius, area, perimeter, and concavity. The dataset’s target variable indicates whether the tumor is benign (B) or malignant (M).
+This is a **Flask-based web application** for predicting whether a breast tumor is **benign or malignant** using the **Wisconsin Breast Cancer (Diagnostic) dataset**.
+
+---
+
+## Dataset Description
+
+The Wisconsin Breast Cancer (Diagnostic) dataset contains **569 samples** with **30 numerical features** derived from fine needle aspirate (FNA) images of breast masses.
+
+Each sample includes measurements describing **cell nuclei characteristics**, such as radius, area, perimeter, and concavity.
+The dataset’s **target variable** indicates whether the tumor is **benign (B)** or **malignant (M)**.
+
+### Key Attributes
 
 | Attribute                | Description                                                                                                                                   |
 | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -14,8 +23,12 @@ Each sample includes measurements describing cell nuclei characteristics, such a
 | **Worst Radius**         | Maximum distance from the center to the nucleus boundary. Malignant cells usually have larger and more variable nuclei.                       |
 | **Worst Area**           | Largest nucleus area measured. Indicates abnormal cell growth.                                                                                |
 | **Worst Perimeter**      | Maximum perimeter length, showing irregularity of cell shape.                                                                                 |
-**Trained Models**
 
+
+
+## Trained Models
+
+| Model Name                   |
 | ---------------------------- |
 | Support Vector Machine (SVM) |
 | K-Nearest Neighbors (KNN)    |
@@ -24,7 +37,18 @@ Each sample includes measurements describing cell nuclei characteristics, such a
 | XGBoost                      |
 | Random Forest                |
 
-**Best-fitted Model**
-Random Forest with accuracy of 96.49% with test data and recall score 96%
-**Live App**
-https://breast-cancer-prediction-2-6lre.onrender.com
+---
+
+## Best-Fitted Model
+
+* **Random Forest**
+* **Accuracy:** 96.49% (on test data)
+* **Recall Score:** 96%
+
+---
+
+## Live App
+
+[Visit the app here](https://breast-cancer-prediction-2-6lre.onrender.com)
+
+
